@@ -1,0 +1,54 @@
+{
+  "name": "tfs-input",
+  "version": "0.9.0",
+  "private": false,
+  "type": "module",
+  "description": "Customizable Vue input component floating labels for modern UIs.",
+  "homepage": "https://github.com/MFM-347/tfsInput#readme",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "main": "./dist/tfsInput.umd.cjs",
+  "module": "./dist/tfsInput.js",
+  "exports": {
+    ".": {
+      "import": "./dist/tfsInput.js",
+      "require": "./dist/tfsInput.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.12"
+  },
+  "peerDependencies": {
+    "vue": "^3.x"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.4",
+    "vite": "^5.4.10"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "input",
+    "ui-component"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MFM-347/tfsInput.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MFM-347/tfsInput/issues"
+  },
+  "author": {
+    "name": "Farhan Madni",
+    "email": "madnifm347@outlook.com"
+  },
+  "license": "MIT"
+}
