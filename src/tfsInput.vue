@@ -1,3 +1,9 @@
+<script>
+export default {
+  name: "tInput",
+};
+</script>
+
 <template>
   <div class="contain">
     <input
@@ -11,7 +17,6 @@
     <label class="label"> {{ label }} </label>
   </div>
 </template>
-
 <script setup>
 defineProps({
   label: String,
@@ -20,9 +25,6 @@ defineProps({
 });
 
 defineEmits(["update:val"]);
-defineExpose({
-  name: "tInput"
-});
 </script>
 <style scoped>
 .contain {
@@ -32,7 +34,7 @@ defineExpose({
   background-color: transparent;
   color: #27272a;
   border: 1px solid #52525b;
-  width: 100%;
+  width: 90%;
   margin: 5px 15px;
   border-radius: 8.75px;
   background: none;
