@@ -1,3 +1,1 @@
-import tInput from "./tfsInput.vue";
-
-export { tInput };
+export { default as tInput } from "./tfsInput.vue";

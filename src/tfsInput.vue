@@ -20,6 +20,9 @@ defineProps({
 });
 
 defineEmits(["update:val"]);
+defineExpose({
+  name: "tInput"
+});
 </script>
 <style scoped>
 .contain {
