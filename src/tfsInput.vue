@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <div class="contain">
+  <div class="contain" :style="colors">
     <input
       class="inp"
       name="text"
@@ -17,22 +17,40 @@ export default {
     <label class="label"> {{ label }} </label>
   </div>
 </template>
+
 <script setup>
-defineProps({
+import { computed } from "vue";
+
+const { label, val, placehold, primaryColor, textColor } = defineProps({
   label: String,
   val: String,
   placehold: String,
+  primaryColor: {
+    type: String,
+    default: "#2563eb",
+  },
+  textColor: {
+    type: String,
+    default: "#27272a",
+  },
 });
 
 defineEmits(["update:val"]);
+
+const colors = computed(() => ({
+  "--primary": primaryColor,
+  "--text": textColor,
+}));
 </script>
+
 <style scoped>
 .contain {
   position: relative;
 }
+
 .inp {
   background-color: transparent;
-  color: #27272a;
+  color: var(--text);
   border: 1px solid #52525b;
   width: 90%;
   margin: 5px 15px;
@@ -41,16 +59,16 @@ defineEmits(["update:val"]);
   padding: 12px 16px;
   font-size: 18px;
 }
+
 .inp:focus {
-  border: 1px solid #2563eb;
+  border: 1px solid var(--primary);
   outline: none;
 }
-.inp::placeholder,
-.inp::-webkit-input-placeholder,
-.inp::-ms-input-placeholder,
-.inp::-moz-input-placeholder {
+
+.inp::placeholder {
   color: #71717a;
 }
+
 .inp,
 .label {
   transition:
@@ -58,6 +76,7 @@ defineEmits(["update:val"]);
     background-color,
     border-color 0.2s ease-out;
 }
+
 .label {
   background-color: transparent;
   color: #71717a;
@@ -68,11 +87,12 @@ defineEmits(["update:val"]);
   border-radius: 7.25px;
   position: absolute;
   top: -12px;
-  left: 40px;
+  left: 24px;
   backdrop-filter: blur(8px);
 }
+
 .contain:focus-within .label {
-  color: #2563eb;
-  border: 1px solid #2563eb;
+  color: var(--primary);
+  border: 1px solid var(--primary);
 }
 </style>
