@@ -28,6 +28,7 @@ Import and use the component in your Vue project.
 <script setup>
 import { ref } from "vue";
 import tInput from "tfs-input";
+import "tfs-input/style.css";
 
 const name = ref("");
 </script>
