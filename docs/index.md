@@ -7,7 +7,7 @@ hero:
   actions:
     - theme: brand
       text: Getting Started
-      link: /tfsInput/Usage
+      link: /Usage
 
 features:
   - title: Customizable UI
