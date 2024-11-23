@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <div class="contain" :style="colors">
+  <div class="contain" :class="theme" :style="colors">
     <input
       class="inp"
       name="text"
@@ -22,16 +22,31 @@ export default {
 import { computed } from "vue";
 
 const { label, val, placehold, primaryColor, textColor } = defineProps({
-  label: String,
-  val: String,
-  placehold: String,
+  label: {
+    type: String,
+    default: "Label",
+  },
+  val: {
+    type: String,
+    default: "Input Value",
+  },
+  placehold: {
+    type: String,
+    default: "Placeholder",
+  },
   primaryColor: {
     type: String,
     default: "#2563eb",
+    validator: (value) => /^#([0-9A-F]{3}){1,2}$/i.test(value),
   },
   textColor: {
     type: String,
     default: "#27272a",
+    validator: (value) => /^#([0-9A-F]{3}){1,2}$/i.test(value),
+  },
+  theme: {
+    type: String,
+    default: "auto",
   },
 });
 
@@ -44,6 +59,22 @@ const colors = computed(() => ({
 </script>
 
 <style scoped>
+:root,
+.light,
+.auto {
+  --c1: #52525b;
+  --c2: #71717a;
+}
+.dark {
+  --c1: #71717a;
+  --c2: #a1a1aa;
+}
+@media (prefers-color-scheme: dark) {
+  .auto {
+    --c1: #71717a;
+    --c2: #a1a1aa;
+  }
+}
 .contain {
   position: relative;
 }
@@ -51,7 +82,7 @@ const colors = computed(() => ({
 .inp {
   background-color: transparent;
   color: var(--text);
-  border: 1px solid #52525b;
+  border: 1px solid var(--c1);
   width: 90%;
   margin: 5px 15px;
   border-radius: 8.75px;
@@ -66,7 +97,7 @@ const colors = computed(() => ({
 }
 
 .inp::placeholder {
-  color: #71717a;
+  color: var(--c2);
 }
 
 .inp,
@@ -79,8 +110,8 @@ const colors = computed(() => ({
 
 .label {
   background-color: transparent;
-  color: #71717a;
-  border: 1px solid #52525b;
+  color: var(--c2);
+  border: 1px solid var(--c1);
   font-size: 15px;
   font-weight: 600;
   padding: 0 6px;

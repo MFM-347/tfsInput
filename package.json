@@ -1,10 +1,10 @@
 {
   "name": "tfs-input",
-  "version": "0.9.7",
+  "version": "0.9.8",
   "private": false,
   "type": "module",
   "description": "Customizable Vue input component floating labels for modern UIs.",
-  "homepage": "https://github.com/MFM-347/tfsInput#readme",
+  "homepage": "https://MFM-347.github.io/tfsInput",
   "files": [
     "dist/*",
     "src/*"
