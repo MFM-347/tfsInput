@@ -7,21 +7,18 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: "Home", link: "/" },
-      { text: "How to", link: "/Usage" },
+      { text: "Home", link: "/tfsInput/" },
+      { text: "How to", link: "/tfsInput/Usage" },
     ],
     sidebar: [
       {
         text: "Guide",
         items: [
-          { text: "Usage", link: "/Usage" },
-          { text: "Properties", link: "/Properties" },
+          { text: "Usage", link: "/tfsInput/Usage" },
+          { text: "Properties", link: "/tfsInput/Properties" },
         ],
       },
     ],
-    editLink: {
-      pattern: "https://github.com/MFM-347/tfsInput/edit/main/docs/:path",
-    },
     socialLinks: [
       { icon: "github", link: "https://github.com/MFM-347/tfsInput" },
       { icon: "npm", link: "https://www.npmjs.com/package/tfs-input" },
